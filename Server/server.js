@@ -11,7 +11,7 @@ const app=express();
 dotenv.config();
 ExpiryCron();
 const port=process.env.PORT||3000;
-
+app.use(cors());
 // connection to monogDB
 connectDB();
 
