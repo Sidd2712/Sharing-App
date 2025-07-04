@@ -30,7 +30,7 @@ router.post("/upload",upload.single('file'),async(req,res)=>{
             expiry: expiryDate,
             isExpired:false,
         });
-        const downloadLink=`http://${req.get("host")}/download/${shortId}`;
+        const downloadLink=`https://${req.get("host")}/download/${shortId}`;
         if(emailTo){
             await sendMail({
                 emailTo,

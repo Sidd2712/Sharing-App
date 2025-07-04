@@ -9,6 +9,15 @@ const downloadRouter=require('./routes/fileDownloadRoutes.js');
 
 const app=express();
 dotenv.config();
+
+const fs = require('fs');
+const path = require('path');
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+}
+
+
 ExpiryCron();
 const port=process.env.PORT||3000;
 app.use(cors());
