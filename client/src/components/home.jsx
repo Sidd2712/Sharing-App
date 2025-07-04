@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./home.css";
 
+import "./home.css";
 const Home = () => {
   const [file, setFile] = useState(null);
   const [emailTo, setEmailTo] = useState("");
@@ -33,10 +33,12 @@ const Home = () => {
 
     try {
       setIsLoading(true);
-      const res = await fetch("http://localhost:3000/upload", {
+      console.log("API URL:", process.env.REACT_APP_PUBLIC_API_URL);
+      const res = await fetch(`${process.env.REACT_APP_PUBLIC_API_URL}/upload`, {
         method: "POST",
         body: formData,
       });
+
 
       const data = await res.json();
 
