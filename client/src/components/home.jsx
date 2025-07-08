@@ -33,7 +33,6 @@ const Home = () => {
 
     try {
       setIsLoading(true);
-      console.log("API URL:", process.env.REACT_APP_PUBLIC_API_URL);
       const res = await fetch(`${process.env.REACT_APP_PUBLIC_API_URL}/upload`, {
         method: "POST",
         body: formData,
